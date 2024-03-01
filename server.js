@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(intialPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(intialPath, "home/main.html"));
+    res.sendFile(path.join(intialPath, "main.html"));
 });
 
 app.get('/login', (req, res) => {
@@ -19,7 +19,7 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(intialPath, "register.html"));
+    res.sendFile(path.join(intialPath, "register/register.html"));
 })
 
 app.listen(3000, (req, res) => {
