@@ -1,38 +1,26 @@
-const wrapper = document.querySelector('.wrapper');
-const loginlink = document.querySelector('.login-link');
-const registerlink = document.querySelector('.register-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
-const iconClose = document.querySelector('.icon-close');
+document.addEventListener('DOMContentLoaded', function(){
+    const btnPopup = document.querySelector('.btnLogin-popup');
 
-registerlink.addEventListener('click', ()=>{
-    wrapper.classList.add('active');
-});
+    btnPopup.addEventListener('click', function(){
+        document.body.classList.add('fade-out');
 
-loginlink.addEventListener('click', ()=>{
-    wrapper.classList.remove('active');
-});
+        setTimeout(function(){
+            window.location.href = 'login/login.html';
+            console.log('moved to main');
+        }, 500);
+    });
 
-btnPopup.addEventListener('click', ()=>{
-    wrapper.classList.toggle('active-popup');
-});
+    const pageLinks = document.getElementsByTagName('a');
 
-iconClose.addEventListener('click', ()=>{
-    wrapper.classList.remove('active-popup');
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("myForm");
-    form.addEventListener("submit", function (event) {
-        
-
-    var email = document.getElementById("email");
-        var password = document.getElementById("password");
-
-        console.log("Email: "+email);
-        console.log("Password: "+password);
-        
-        event.preventDefault();
-
-        window.location.href = '/Login/main.html';
-    })
+    for (let i = 0; i < pageLinks.length; i++) {
+        pageLinks[i].addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            document.body.classList.add('fade-out');
+            
+            setTimeout(function() {
+                window.location.href = pageLinks[i].getAttribute('href');
+            }, 500); 
+        });
+    }
 });

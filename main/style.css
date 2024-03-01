@@ -5,7 +5,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body.transitioning{
+    overflow: hidden;
+}
+
 body{
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +19,10 @@ body{
     background: url('images/eberhard-grossgasteiger-y2azHvupCVo-unsplash.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+body.fade-out{
+    opacity: 0;
 }
 
 header{
