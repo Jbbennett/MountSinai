@@ -34,7 +34,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 1000;
 }
 
 .logo .logo-image{
@@ -95,4 +95,61 @@ header{
 .navigation .btnLogin-popup:hover{
     background: #fff;
     color: black;
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 100;
+}
+
+.hamburger span{
+    width: 25px;
+    height: 3px;
+    background:black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px){
+    .navigation{
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navigation a,
+    .navigation .btnLogin-popup{
+        margin: 0;
+        text-align: center;
+    }
+
+    .navigation.active{
+        display: flex;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1){
+        transform: rotate(45deg) translate(5px,5px);
+    }
+
+    .hamburger.active span:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3){
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 }

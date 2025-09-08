@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/main/style.css">
     <link rel="icon" href="/main/images/mount-sinai-low-resolution-logo-black-on-transparent-background.png" type="image/png">
     <script src="login.js"></script>
+    <script src="/main/script.js"></script>
     <title>Login</title>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <img src="../images/mount-sinai-low-resolution-logo-black-on-transparent-background.png" alt="Logo" class="logo-image">
+            <img src="/main/images/mount-sinai-low-resolution-logo-black-on-transparent-background.png" alt="Logo" class="logo-image">
         </div>
         <nav class="navigation">
-            <a href="../main.html">Home</a>
-            <a href="#">Verse of the Day</a>
+            <a href="/main/main.html">Home</a>
+            <a href="/register.html">Verse of the Day</a>
             <a href="#">Shop</a>
             <a href="#">Contact</a>
             <a href="#">About</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <div class="wrapper">
