@@ -236,3 +236,29 @@ header{
 .login-register p a:hover{
     text-decoration: underline;
 }
+
+.register-message {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.register-message.error {
+    background-color: #f8d7da;
+    color: #721c24
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
