@@ -1,31 +1,33 @@
-*{
+/* ===== Global Reset ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-body.transitioning{
-    overflow: hidden;
-}
-
-body{
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
+/* ===== Body ===== */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height:100vh;
-    background: url('images/eberhard-grossgasteiger-y2azHvupCVo-unsplash.jpg') no-repeat;
+    min-height: 100vh;
+    background: url('images/eberhard-grossgasteiger-y2azHvupCVo-unsplash.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
 }
 
-body.fade-out{
+body.fade-out {
     opacity: 0;
 }
 
-header{
+body.transitioning {
+    overflow: hidden;
+}
+
+/* ===== Header & Navigation ===== */
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -37,17 +39,14 @@ header{
     z-index: 1000;
 }
 
-.logo .logo-image{
-    width: 100%;
-    height: auto;
+.logo {
+    width: 85px;
+    height: 50px;
 }
 
-.logo{
-    width: 85px;;
-    height: 50px;
-    font-size: 2em;
-    color: black;
-    user-select: none;
+.logo .logo-image {
+    width: 100%;
+    height: auto;
 }
 
 .navigation a {
@@ -59,7 +58,7 @@ header{
     margin-left: 40px;
 }
 
-.navigation a::after{
+.navigation a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -73,31 +72,32 @@ header{
     transition: transform 0.5s;
 }
 
-.navigation a:hover::after{
+.navigation a:hover::after {
     transform-origin: left;
     transform: scaleX(1);
 }
-.navigation .btnLogin-popup{
+
+.navigation .btnLogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
     border: 2px solid black;
-    outline: none;
     border-radius: 6px;
     margin-left: 40px;
-    color:black;
+    color: black;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: 500;
     transition: 0.5s;
 }
 
-.navigation .btnLogin-popup:hover{
+.navigation .btnLogin-popup:hover {
     background: #fff;
     color: black;
 }
 
-.hamburger{
+/* ===== Hamburger Menu ===== */
+.hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -105,16 +105,16 @@ header{
     z-index: 100;
 }
 
-.hamburger span{
+.hamburger span {
     width: 25px;
     height: 3px;
-    background:black;
+    background: black;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
-@media (max-width: 768px){
-    .navigation{
+@media (max-width: 768px) {
+    .navigation {
         position: absolute;
         top: 70px;
         right: 20px;
@@ -128,28 +128,178 @@ header{
     }
 
     .navigation a,
-    .navigation .btnLogin-popup{
+    .navigation .btnLogin-popup {
         margin: 0;
         text-align: center;
     }
 
-    .navigation.active{
+    .navigation.active {
         display: flex;
     }
 
-    .hamburger{
+    .hamburger {
         display: flex;
     }
 
-    .hamburger.active span:nth-child(1){
-        transform: rotate(45deg) translate(5px,5px);
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .hamburger.active span:nth-child(2){
+    .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
 
-    .hamburger.active span:nth-child(3){
+    .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
+}
+
+/* ===== Wrapper / Form Box ===== */
+.wrapper {
+    position: relative;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: 5px;
+}
+
+.input-box #icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+}
+
+/* ===== Remember / Forgot ===== */
+.remember-forgot {
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Button ===== */
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: #a7aab0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 0 40px rgba(0,0,0,1);
+}
+
+.btn:hover {
+    background-color: #929498;
+}
+
+/* ===== Register / Login message ===== */
+.register-message {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.register-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ===== Login/Register text links ===== */
+.login-register {
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
 }

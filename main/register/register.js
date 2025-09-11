@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Save extra user info in Firestore
       await setDoc(doc(db, "users", user.uid), {
         username,
+        lowCaseUser: username.toLowerCase(),
         email: user.email,
         createdAt: new Date()
       });
