@@ -1,34 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="icon" href="images/mount-sinai-low-resolution-logo-black-on-transparent-background.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script type = "module" src="/main/firebase/firebaseconfig.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mount Sinai makes elevated clothing for an intentional life outdoors and in faith.">
+  <title>Mount Sinai | Elevated clothing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/mount-sinai-low-resolution-logo-black-on-transparent-background.png" alt="Logo" class="logo-image">
+  <div class="announcement">Free shipping on orders over $100 <span>↗</span></div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Mount Sinai home">MOUNT<br><span>SINAI</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
+      <a href="#journal">Journal</a>
+    </nav>
+    <button class="bag-button" type="button" aria-label="Open shopping bag"><span>Bag</span><b id="bag-count">0</b></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Designed for the ascent <span class="rule"></span> Est. 2024</p>
+        <h1>Wear your<br><em>conviction.</em></h1>
+        <p class="hero-copy">Elevated clothing for the grounded soul. Made in small batches, inspired by the wild places that bring us closer to God.</p>
+        <a class="button button-light" href="#shop">Explore the collection <span>↘</span></a>
+      </div>
+      <p class="image-credit">Yosemite Valley / 37.7456° N, 119.5936° W</p>
+      <div class="hero-mark">MS<br><span>01</span></div>
+    </section>
+
+    <section class="verse-section" id="verse">
+      <div class="section-label"><span>01</span> Daily bread</div>
+      <div class="verse-body">
+        <p class="verse-kicker">Verse of the day <span class="sun-dot"></span> <span id="verse-date"></span></p>
+        <blockquote id="verse-text">“Those who hope in the Lord will renew their strength. They will soar on wings like eagles.”</blockquote>
+        <p class="verse-reference" id="verse-reference">Isaiah 40:31</p>
+        <p class="verse-note">A little perspective for the road ahead.</p>
+      </div>
+      <button class="circle-arrow" type="button" aria-label="Scroll to the shop" data-scroll="#shop">↓</button>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="shop-heading">
+        <div>
+          <p class="eyebrow dark">The first ascent <span class="rule"></span> Collection 01</p>
+          <h2>Pieces with<br><em>purpose.</em></h2>
         </div>
-        <nav class="navigation">
-            <a href="main.html">Home</a>
-            <a href="register/register.html">Verse of the Day</a>
-            <a href="#">Shop</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
-            <button class="btnLogin-popup">Login</button>
-        </nav>
-        <div class="hamburger" onclick="toggleMenu(this)">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-    
+        <a class="text-link" href="#shop">View all pieces <span>↗</span></a>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image tee-image"><span class="product-tag">New</span><button class="quick-add" type="button" data-product="summit-tee">Add to bag <span>+</span></button></div>
+          <div class="product-meta"><h3>The Summit Tee</h3><p>Heavyweight organic cotton</p><strong>$48</strong></div>
+        </article>
+        <article class="product-card">
+          <div class="product-image crew-image"><span class="product-tag">Core</span><button class="quick-add" type="button" data-product="wilderness-crew">Add to bag <span>+</span></button></div>
+          <div class="product-meta"><h3>Wilderness Crew</h3><p>Brushed fleece / oat</p><strong>$88</strong></div>
+        </article>
+        <article class="product-card">
+          <div class="product-image cap-image"><span class="product-tag">Limited</span><button class="quick-add" type="button" data-product="good-soil-cap">Add to bag <span>+</span></button></div>
+          <div class="product-meta"><h3>Good Soil Cap</h3><p>6-panel cotton twill</p><strong>$36</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-image"></div>
+      <div class="story-copy">
+        <p class="eyebrow dark">Why Mount Sinai <span class="rule"></span> No. 001</p>
+        <h2>Clothing for<br>the <em>in-between.</em></h2>
+        <p>Between the trailhead and the summit. Between the question and the answer. Mount Sinai is a reminder to keep moving toward what is higher, truer, and more alive.</p>
+        <a class="text-link" href="#journal">Read our story <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="journal-section" id="journal">
+      <div class="section-label"><span>02</span> Field notes</div>
+      <div class="journal-content"><p class="eyebrow dark">From the journal</p><h2>Keep your eyes<br><em>on the horizon.</em></h2><a class="button button-dark" href="#story">Read the journal <span>↗</span></a></div>
+      <div class="journal-stamp">WALK<br>IN<br>LIGHT</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="wordmark footer-mark" href="#top">MOUNT<br><span>SINAI</span></a><p>Elevated clothing.<br>Grounded in faith.</p></div>
+    <div class="footer-links"><a href="#shop">Shop</a><a href="#story">About</a><a href="#journal">Journal</a><a href="mailto:hello@mountsinai.co">Contact</a></div>
+    <div class="newsletter"><p>Notes from the mountain</p><form id="newsletter-form"><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Your email address" required><button type="submit" aria-label="Subscribe">↗</button></form><small id="form-message">Occasional notes, never noise.</small></div>
+    <div class="footer-bottom"><span>© 2024 Mount Sinai Co.</span><span>Made for the journey</span></div>
+  </footer>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow dark">Your collection</p><h2>Shopping bag</h2></div><button class="cart-close" type="button" aria-label="Close shopping bag">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cart-total">$0</strong></div><button class="button button-dark checkout-button" type="button">Continue to checkout <span>↗</span></button><small id="checkout-message">Shipping and taxes calculated at checkout.</small></div>
+  </aside>
+  <div class="cart-scrim" data-cart-close></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
